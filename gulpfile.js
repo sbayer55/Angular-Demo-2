@@ -6,7 +6,7 @@ gulp.task('js', function() {
 	gulp.src('builds/development/js/**/*')
 });
 
-gulp.task('help', function() {
+gulp.task('html', function() {
 	gulp.src('builds/development/*.html')
 });
 
@@ -14,7 +14,7 @@ gulp.task('css', function() {
 	gulp.src('builds/development/css/*.css');
 });
 
-gulp.task('watch' function() {
+gulp.task('watch', function() {
 	gulp.watch('builds/development/js/**/*', ['js']);
 	gulp.watch('builds/development/css/*.css', ['css']);
 	gulp.watch(['builds/development/*.html', 

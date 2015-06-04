@@ -1,0 +1,23 @@
+<div class="loginWindow">
+	<form name="login-form" 
+		ng-submit="register()"
+		novalidate>
+		
+		<div class="logo">Design Expression</div>
+		<p style="text-align: left; margin: 10px 20px;">User Login</p>
+		
+		<input name="firstname" type="text" placeholder="First Name"
+			ng-model="user.firstname"></input>
+		<input name="lastname" type="text" placeholder="Last Name"
+			ng-model="user.lastname"></input>
+		<input name="email" type="text" placeholder="Email"
+			ng-model="user.email"></input>
+		<input name="password" type="password" placeholder="Password" 
+			ng-model="user.password"></input>
+		
+		<div style="padding: 10px 0px;">
+			<button type="submit">Register</button>
+			<a ng-href="#/login">or Login</a>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,14 @@
+<div class="nav">
+	<div>
+		<ul>
+			<li>Dwelling</li>
+			<li>Home</li>
+			<li>Domicile</li>
+		</ul>
+	</div>
+	<div class="userinfo cf">
+		<span ng-show="user">{{user.name}}</span>
+		<a class="logout" ng-show="user" ng-href="#/logout" ng-click="logout()">logout</a>
+		<a class="login" ng-hide="user" ng-href="#/login">login</a>
+	</div>
+</div>
