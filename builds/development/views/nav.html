@@ -7,8 +7,8 @@
 		</ul>
 	</div>
 	<div class="userinfo cf">
-		<span ng-show="user">{{user.name}}</span>
-		<a class="logout" ng-show="user" ng-href="#/logout" ng-click="logout()">logout</a>
-		<a class="login" ng-hide="user" ng-href="#/login">login</a>
+		<span ng-show="currentUser">{{currentUser.email}}</span>
+		<a class="logout ng-hide" ng-show="currentUser" ng-href="#/logout" ng-click="logout()">logout</a>
+		<a class="login ng-hide" ng-hide="currentUser" ng-href="#/login">login</a>
 	</div>
 </div>

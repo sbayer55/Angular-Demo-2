@@ -1,1 +1,15 @@
-Welcome to your domicile.
+<div class="listContainer column">
+	<ul>
+		<li ng-repeat="person in people">
+			{{person.firstname}} {{person.lastname}}
+			<div style="float: right; margin-right: 20px">
+				<button class="transparent"> -&#62; </button>
+				<button class="transparent"> -&#62; </button>
+				<button class="transparent"> -&#62; </button>
+			</div>
+		</li>
+	</ul>
+</div>
+<div class="column">
+	Hello?
+</div>

@@ -4,14 +4,26 @@
 */
 
 app.factory('UserService', 
-	function($firebaseAuth, $rootScope) {
+	function($firebase, $firebaseObject, $firebaseAuth, $rootScope, FirebaseURL) {
 		
 	console.log('Loading service [UserService]');
 	
-	var ref = new Firebase('https://angularchecklist.firebaseio.com');
+	var ref = new Firebase(FirebaseURL);
 	var auth = $firebaseAuth(ref);
 	
 	$rootScope.currentUser = '';
+	
+	auth.$onAuth(function(authenticatedUser) {
+		if (authenticatedUser) {
+			var userRef = new Firebase(FirebaseURL + '/users/' + authenticatedUser.uid);
+			var user = $firebaseObject(userRef);
+			$rootScope.currentUser = user;
+			console.log('Auto-login Success');
+		}
+		else { //No user data returned
+			console.log('Auto-login Failed');
+		}
+	});
 	
 	var factoryObject = {
 		login: function(user) {
@@ -23,6 +35,8 @@ app.factory('UserService',
 		},  //login
 		
 		logout: function(user) {
+			console.log('User is being logged out');
+			$rootScope.currentUser = '';
 			return auth.$unauth();
 		}, //logout
 		
@@ -35,8 +49,7 @@ app.factory('UserService',
 				email: user.email, 
 				password: user.password
 			})
-			.then(function(error, userData) {
-				console.log(error);
+			.then(function(userData) {
 				console.log(userData);
 				ref.child('users').child(userData.uid).set({
 					firstname: user.firstname, 

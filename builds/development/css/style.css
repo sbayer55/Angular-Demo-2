@@ -27,6 +27,12 @@ a:link, a:active, a:hover, a:visited {
 .cf:after {
 		clear: both;
 }
+main {
+	width: 100%;
+  max-width: 1000px;
+  min-width: 600px;
+  margin: 0px auto;
+}
 div.nav {
 	background-color: #000;
 	color: #FFF;
@@ -117,7 +123,29 @@ div.logo {
 	font-size: 20px;
 }
 
-
+div.column {
+	float: left;
+  width: 50%;
+  overflow: hidden;
+}
+.listContainer ul {
+	list-style-type: none;
+	width: 100%;
+	display: block;
+}
+.listContainer ul li {
+	border-radius: 10px;
+	padding: 10px 20px;
+}
+.listContainer ul li:hover {
+	background-color: #F7F7F7;
+}
+button.transparent {
+	float: right;
+	color: #000;
+	border-radius: 10px;
+	border: 0px none;
+}
 
 
 
