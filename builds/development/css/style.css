@@ -1,4 +1,7 @@
-html, body, div, form {
+html, body {
+	background-color: #b5ecee;
+}
+html, body, div, form, ul, pre {
 	margin: 0px;
 	border: 0px;
 	padding: 0px;
@@ -6,9 +9,13 @@ html, body, div, form {
 	font-weight: 100;
 	font-style: normal;
 	font-size: 16px;
+	text-align: left;
 }
 div {
 	display: inline-block;
+}
+ul, li {
+	list-style-type: none;
 }
 div.page {
 	width: 100%;
@@ -27,14 +34,19 @@ a:link, a:active, a:hover, a:visited {
 .cf:after {
 		clear: both;
 }
+.error {
+	color: #F00;
+	font-size: 12px;
+}
 main {
 	width: 100%;
-  max-width: 1000px;
-  min-width: 600px;
-  margin: 0px auto;
+	 max-width: 1000px;
+	 min-width: 600px;
+	 margin: 0px auto;
+	background-color: #b5ecee;
 }
 div.nav {
-	background-color: #000;
+	background-color: #ae72ab;
 	color: #FFF;
 	width: 100%;
 	display: block;
@@ -53,7 +65,7 @@ div.nav ul li {
 	padding: 10px 20px;
 }
 div.nav ul li:hover {
-	background-color: #0591ff;
+	background-color: rgba(255, 255, 255, 0.4);
 }
 div.userinfo {
 	display: block;
@@ -65,14 +77,18 @@ div.userinfo {
 	overflow: hidden;
 }
 div.userinfo a.logout {
-	background-color: #F00;
+	background-color: #80a2af;
 	padding: 10px 20px;
 	margin: 0px;
 }
 div.userinfo a.login {
-	background-color: #0591ff;
+	background-color: #80a2af;
 	padding: 10px 20px;
 	margin: 0px;
+}
+div.userinfo span {
+	padding: 0px 10px;
+	text-transform: uppercase;
 }
 div.message span.title {
 	color: #000;
@@ -81,18 +97,89 @@ div.message span.body {
 	color: #888;
 	font-size: 12px;
 }
+ul.songlist {
+	background-color: rgba(255, 255, 255, 0.24);
+	padding: 10px 0px;
+	margin: 30px 0px;
+	border-radius: 5px;
+}
+li.songlink, li.header {
+	margin: 10px 20px;
+	padding: 10px 14px;
+	border-radius: 3px;
+}
+li.header {
+	background-color: rgba(255, 255, 255, 0.4);
+	border-bottom: 5px solid #80a2af;
+}
+li.songlink {
+	background-color: rgba(255, 255, 255, 0.4);
+	border-left: 5px solid #80a2af;
+}
+li.header div {
+	width: 228px;
+	text-transform: uppercase;
+	font-size: 17px;
+	text-align: center;
+	font-weight: 400;
+}
+li.songlink div {
+	width: 228px;
+}
+input, textarea {
+	background-color: transparent;
+	border-width: 0px 0px 1px;
+	color: #FFF;
+}
 input {
 	padding: 10px 20px;
 	font-size: 12px;
 	width: 260px;
+	background-color: transparent;
+	border-width: 0px 0px 1px;
+	color: #FFF;
+}
+::-webkit-input-placeholder {
+   color: #FFF;
+}
+:-moz-placeholder { /* Firefox 18- */
+   color: #FFF;  
+}
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #FFF;  
+}
+:-ms-input-placeholder {  
+   color: #FFF;  
 }
 button {
 	padding: 10px 20px;
 	font-size: 14px;
-	background-color: #0591ff;
+	background-color: #ae72ab;
 	background-image: none;
 	border: 0px none;
 	color: #FFF;
+}
+.abutton {
+	color: #FFF;
+	background-color: #ae72ab;
+	padding: 10px 20px;
+	font-size: 14px;
+	margin: 10px;
+	display: inline-block;
+	float: right;
+}
+button:ng-disabled {
+	color: #999;
+	background-color: #AAA;
+}
+textarea {
+	margin: 2px 0px;
+	padding: 10px 20px;
+	font-family: Avenir;
+	font-weight: 100;
+	font-style: normal;
+	font-size: 12px;
+	resize: none;
 }
 
 de-notification {
@@ -103,13 +190,16 @@ de-notification {
 	margin: 60px 0px;
 }
 div.loginWindow {
-	border: 1px solid #d5d5d5;
+	border: 1px solid #ae72ab;
 	margin: 100px auto;
 	width: 380px;
 	display: block;
 	text-align: center;
 	padding: 20px 0px;
-	box-shadow: 0 3px 10px rgba(0,0,0,.3);
+	box-shadow: 0 3px 10px rgba(95, 144, 146, 0.63);
+	background-color: #96becd;
+	color:#FFF;
+	border-radius: 10px;
 }
 div.logo {
 	height: 80px;
@@ -122,34 +212,54 @@ div.logo {
 	padding-bottom: 40px;
 	font-size: 20px;
 }
-
-div.column {
-	float: left;
-  width: 50%;
-  overflow: hidden;
+.singleLine{
+	text-align: center;
 }
-.listContainer ul {
-	list-style-type: none;
+.singleLine input, .singleLine textarea {
+	display: block;
+	margin: 4px auto;
+	width: 600px;
+}
+.singleLine textarea {
+	height: 400px;
+}
+div.body {
 	width: 100%;
+	margin: 0px auto;
+	padding: 20px 0px;
+	text-align: center;
+}
+.songform {
+	background-color: #96becd;
+	border: 1px solid #ae72ab;
+	border-radius: 10px;
+	width:auto;
+	/*border:1px solid #000;*/
+	margin: 0px auto;
+	display: inline-block;
+	padding:20px;
+	box-shadow: 0 3px 10px rgba(0,0,0,.3);
+	color: #FFF;
+}
+.artist {
+	font-weight: 600;
+	font-size: 16px;
+}
+
+.column {
+	float: left;
+	max-width: 50%;
+	padding: 0px 5px;
+}
+
+.rightJustify {
+	text-align: right;
+}
+textarea.comment {
+	width: 100%;
+	height: 100px;
 	display: block;
 }
-.listContainer ul li {
-	border-radius: 10px;
-	padding: 10px 20px;
-}
-.listContainer ul li:hover {
-	background-color: #F7F7F7;
-}
-button.transparent {
-	float: right;
-	color: #000;
-	border-radius: 10px;
-	border: 0px none;
-}
-
-
-
-
 
 
 

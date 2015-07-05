@@ -1,0 +1,27 @@
+<div class="body">
+	<div class="songform singleLine">
+		<div class="column left">
+			<iframe ng-src="{{trustSrc(movie.src)}}" frameborder="0" allowfullscreen></iframe>
+			{{youtubeURL}}<br />
+			<form name="commentForm" class="cf" ng-show="currentUser" ng-submit="addcomment()" novalidate>
+				<textarea class="comment" ng-model="comment" placeholder="Comment"></textarea>
+				<button type="submit" class="abutton">Post</button>
+			</form>
+			
+			<div style="display: block; padding: 10px 0px" ng-repeat="comment in comments">
+				<div style="display: block; font-size: 12px"><span style="color: #ae72ab">{{comment.author.displayname}}</span> {{comment.date | date: "MMM d, yy h:mm a"}}</div>
+				<div style="display: block">{{comment.text}}</div>
+				<div  style="display: block; font-size: 12px"><a href="">reply</a></div>
+			</div>
+		</div>
+		
+		<div class="column right">
+			<p>
+				<span class="artist">{{song.artist}}</span><br />
+				<span class="album" ng-show="song.album">{{song.album}}<br></span><br />
+				{{song.title}}
+			</p>
+			<pre>{{song.lyrics}}</pre>
+		</div>
+	</div>
+</div>

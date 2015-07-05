@@ -1,15 +1,21 @@
-<div class="listContainer column">
-	<ul>
-		<li ng-repeat="person in people">
-			{{person.firstname}} {{person.lastname}}
-			<div style="float: right; margin-right: 20px">
-				<button class="transparent"> -&#62; </button>
-				<button class="transparent"> -&#62; </button>
-				<button class="transparent"> -&#62; </button>
-			</div>
+<ul class="songlist">
+	<!-- Header Row -->
+	<li class="header">
+		<div>Title</div>
+		<div>Artist</div>
+		<div>Posted By</div>
+		<div>Comments</div>
+	</li>
+	
+	<!-- Song Item: -->
+	<a ng-href="#/songview/{{key}}" ng-repeat="(key, song) in songs">
+		<li class="songlink">
+				<div>{{song.title}}</div>
+				<div>{{song.artist}}</div>
+				<div>{{song.user}}</div>
+				<div>{{key}}</div>
 		</li>
-	</ul>
-</div>
-<div class="column">
-	Hello?
-</div>
+	</a>
+</ul>
+
+<a class="abutton" ng-href="#/addsong">Add a song</a>

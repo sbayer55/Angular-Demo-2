@@ -20,6 +20,14 @@ app.config(['$routeProvider', function($routeProvider) {
 		templateUrl: 'views/domicile.html', 
 		controller: 'domicileController'
 	})
+	.when('/addsong', {
+		templateUrl: 'views/addsong.html', 
+		controller: 'songlistController'
+	})
+	.when('/songview/:songID', {
+		templateUrl: 'views/songview.html', 
+		controller: 'songviewController'
+	})
 	.otherwise({
 		redirectTo: '/login'
 	});

@@ -1,0 +1,34 @@
+<div class="body">
+	<form name="songForm" novalidate class="songform singleLine" ng-submit="addsong(song)">
+		<p>Add A New Song</p>
+		<input type="text" name="title" placeholder="Song Title" required
+			ng-model="song.title">
+		<p class="error" 
+			ng-show="songForm.title.$invalid && songForm.title.$touched">
+			Song title is requiered
+		</p>
+			
+		<input type="text" name="artist" placeholder="Artist" required
+			ng-model="song.artist">
+		<p class="error" 
+			ng-show="songForm.artist.$invalid && songForm.artist.$touched">
+			Song artist is requiered
+		</p>
+			
+		<input type="text" placeholder="Album (optional)"
+			ng-model="song.album">
+			
+		<textarea name="lyrics" placeholder="Song Lyrics..." required
+			 ng-model="song.lyrics"></textarea>
+		<p class="error" 
+			ng-show="songForm.lyrics.$invalid && songForm.lyrics.$touched">
+			Song lyrics are requiered
+		</p>
+			 
+		<input type="text" placeholder="YouTube Link (optional)"
+			ng-model="song.youtubeURL">
+			
+		<button type="submit" 
+			ng-class="myform.$invalid" ng-disabled="myform.$invalid">Save Song</button>
+	</form>
+</div>

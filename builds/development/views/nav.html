@@ -1,13 +1,13 @@
 <div class="nav">
 	<div>
 		<ul>
-			<li>Dwelling</li>
-			<li>Home</li>
-			<li>Domicile</li>
+			<li><a ng-href="#/dwelling">Dwelling</a></li>
+			<li><a ng-href="#/home">Home</a></li>
+			<li><a ng-href="#/domicile">Domicile</a></li>
 		</ul>
 	</div>
 	<div class="userinfo cf">
-		<span ng-show="currentUser">{{currentUser.email}}</span>
+		<span ng-show="currentUser">{{currentUser.displayname}}</span>
 		<a class="logout ng-hide" ng-show="currentUser" ng-href="#/logout" ng-click="logout()">logout</a>
 		<a class="login ng-hide" ng-hide="currentUser" ng-href="#/login">login</a>
 	</div>

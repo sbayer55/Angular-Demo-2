@@ -1,7 +1,19 @@
 app.controller('loginController', 
-	function($scope, $timeout, $location, $rootScope, UserService, FirebaseURL) {
+	function($scope, $location, $rootScope, $firebase, $firebaseAuth, UserService, FirebaseURL) {
 		
 	console.log('Loading controller [loginController]');
+	
+	var ref = new Firebase(FirebaseURL);
+	var auth = $firebaseAuth(ref);
+	
+	// Check currenty user:
+	if ($rootScope.currentUser) {
+		console.log('Current user found.');
+		$location.path('/domicile');
+	}
+	else {
+		console.log('Failed to find currentUser.');
+	}
 	
 	$scope.login = function() {
 		console.log('Attempting to log in ' + $scope.user.email);
