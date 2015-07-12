@@ -3,8 +3,9 @@
 		<div class="column left">
 			<iframe ng-src="{{trustSrc(movie.src)}}" frameborder="0" allowfullscreen></iframe>
 			{{youtubeURL}}<br />
-			<form name="commentForm" class="cf" ng-show="currentUser" ng-submit="addcomment()" novalidate>
-				<textarea class="comment" ng-model="comment" placeholder="Comment"></textarea>
+			
+			<form name="commentForm" id="commentForm" class="cf" ng-show="currentUser" ng-submit="addcomment()" novalidate>
+				<textarea class="comment" ng-model="comment" placeholder="Comment" ng-keyup="$event.keyCode == 13 && addcomment()"></textarea>
 				<button type="submit" class="abutton">Post</button>
 			</form>
 			
