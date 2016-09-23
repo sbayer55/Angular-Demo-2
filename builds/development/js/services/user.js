@@ -19,17 +19,9 @@ app.factory('UserService',
 			var user = $firebaseObject(userRef);
 			$rootScope.currentUser = user;
 			console.log('Auto-login Success');
-			
-			/*
-			if ($location.path().indexOf('login') >= 0) {
-				console.log('push to domicile.');
-				$location.path('#/domicile');
-			}
-			else {
-				console.log('path:');
-				console.log($location.path());
-			}
-			*/
+			if ($rootScope.redirect) {
+				$location.path($rootScope.redirect);
+			} 
 		}
 		else { //No user data returned
 			console.log('Auto-login Failed');

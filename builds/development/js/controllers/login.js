@@ -13,6 +13,7 @@ app.controller('loginController',
 	}
 	else {
 		console.log('Failed to find currentUser.');
+		$rootScope.redirect = 'domicile';
 	}
 	
 	$scope.login = function() {
